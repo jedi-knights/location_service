@@ -7,12 +7,18 @@ import sys
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
-from routes import country_routes, city_routes, state_routes, location_routes, postal_code_routes
+from routes import kubernetes_routes
+from routes import country_routes
+from routes import city_routes
+from routes import state_routes
+from routes import location_routes
+from routes import postal_code_routes
 
 load_dotenv()
 
 app = FastAPI()
 
+app.include_router(kubernetes_routes.router)
 app.include_router(country_routes.router)
 app.include_router(state_routes.router)
 app.include_router(city_routes.router)
