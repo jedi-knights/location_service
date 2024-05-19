@@ -20,11 +20,11 @@ The service provides the following API endpoints:
 - `PUT /location` - Update the location data of the users
 - `DELETE /location` - Delete the location data of the users
 - `GET /health` - Check the health of the service
-- `GET /info` - Get the information about the service
 - `GET /metrics` - Get the metrics of the service
 - `GET /ready` - Check if the service is ready to serve the requests
 - `GET /live` - Check if the service is live
 - `GET /version` - Get the version of the service
+- 
 - `GET /config` - Get the configuration of the service
 - `GET /env` - Get the environment variables of the service
 - `GET /logs` - Get the logs of the service

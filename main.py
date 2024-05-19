@@ -33,6 +33,15 @@ async def root():
     """
     return {"message": "Hello World"}
 
+
+@app.get("/version")
+async def version():
+    """
+    Version route for the API
+    """
+    return {"version": os.getenv("APP_VERSION", "0.0.0")}
+
+
 if __name__ == "__main__":
     for item in sys.path:
         print(item)
