@@ -2,6 +2,7 @@
 This is the main entrypoint to the API. It is responsible for starting the FastAPI server and
 loading the routes.
 """
+import os
 import sys
 
 from dotenv import load_dotenv
