@@ -11,9 +11,15 @@ DOCKERFILE = Dockerfile
 build:
 	docker build -t $(IMAGE_NAME):$(TAG) -f $(DOCKERFILE) .
 
+lint:
+	pylint **/*.py
+
 # Show Docker images
 images:
 	docker images $(IMAGE_NAME)
+
+run:
+	fastapi dev main.py
 
 # Remove Docker images
 clean:

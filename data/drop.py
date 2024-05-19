@@ -1,19 +1,16 @@
+"""
+This module contains the functionality to drop the database.
+"""
+
 import os
-import psycopg2
-from dotenv import load_dotenv
+
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-load_dotenv()
+from data.db import get_db_connection
 
 if __name__ == "__main__":
     # Connect to the PostgreSQL server
-    conn = psycopg2.connect(
-        dbname="postgres",
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASS"),
-        host=os.getenv("DB_HOST"),
-        port=os.getenv("DB_PORT")
-    )
+    conn = get_db_connection()
 
     # Allow database operations
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)

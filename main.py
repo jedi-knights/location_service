@@ -1,7 +1,13 @@
+"""
+This is the main entrypoint to the API. It is responsible for starting the FastAPI server and
+loading the routes.
+"""
+import sys
+
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
-from microservices.location.routes import country_routes, city_routes, state_routes, location_routes, postal_code_routes
+from routes import country_routes, city_routes, state_routes, location_routes, postal_code_routes
 
 load_dotenv()
 
@@ -16,9 +22,11 @@ app.include_router(location_routes.router)
 
 @app.get("/")
 async def root():
+    """
+    Root route for the API
+    """
     return {"message": "Hello World"}
 
 if __name__ == "__main__":
-    pass
-
-
+    for item in sys.path:
+        print(item)
